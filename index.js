@@ -20,8 +20,8 @@ app.post("/", (req, res) => {
 	
 	const { firstName, lastName } = req.body
 
-	
 	const lastId = users[users.length - 1].id
+	
 	const newId = lastId + 1
 
 	const newUser = {
@@ -30,7 +30,9 @@ app.post("/", (req, res) => {
 		id: newId,
 	}
 
+	
 	users.push(newUser)
+
 	res.status(201).json(newUser)
 })
 
@@ -50,3 +52,4 @@ app.delete("/",(req, res) => {
 app.listen(port, () => {
 	console.log(`Serveur en cours d'exécution sur http://localhost:${port}`);
 });
+
